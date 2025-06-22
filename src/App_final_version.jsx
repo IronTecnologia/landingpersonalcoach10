@@ -38,6 +38,15 @@ function App() {
     }
   ]
 
+  const commonFeatures = [
+    "Dashboard detalhado",
+    "Checkin da atividade",
+    "Informe de vencimento de plano",
+    "Cadastro de alunos",
+    "Cadastro de pacotes",
+    "Gestão financeira"
+  ];
+
   const plans = [
     {
       name: "Starter",
@@ -45,7 +54,7 @@ function App() {
       students: "até 5 alunos",
       link: "https://www.asaas.com/c/o7adb4n4kni75lq7",
       popular: false,
-      features: ["Gestão básica", "Dashboard simples", "Suporte por email"]
+      features: commonFeatures
     },
     {
       name: "Basic",
@@ -53,7 +62,7 @@ function App() {
       students: "até 10 alunos",
       link: "https://www.asaas.com/c/e7grdpxc8nfaedym",
       popular: false,
-      features: ["Todas funcionalidades Starter", "Relatórios avançados", "Suporte prioritário"]
+      features: commonFeatures
     },
     {
       name: "Profissional",
@@ -61,7 +70,7 @@ function App() {
       students: "até 15 alunos",
       link: "https://www.asaas.com/c/c8aixdbwqqgfiwb6",
       popular: true,
-      features: ["Todas funcionalidades Basic", "Integrações avançadas", "Suporte telefônico"]
+      features: commonFeatures
     },
     {
       name: "Premium",
@@ -69,7 +78,7 @@ function App() {
       students: "até 25 alunos",
       link: "https://www.asaas.com/c/o7443qrouzcwgam7",
       popular: false,
-      features: ["Todas funcionalidades Profissional", "API personalizada", "Treinamento incluído"]
+      features: commonFeatures
     },
     {
       name: "Business",
@@ -77,7 +86,7 @@ function App() {
       students: "até 50 alunos",
       link: "https://www.asaas.com/c/4ne2jtqd15t9o48i",
       popular: false,
-      features: ["Todas funcionalidades Premium", "Multi-usuários", "Backup automático"]
+      features: commonFeatures
     },
     {
       name: "Enterprise",
@@ -85,7 +94,7 @@ function App() {
       students: "mais de 50 alunos",
       link: "https://www.asaas.com/c/cx9i271dr5ccxi60",
       popular: false,
-      features: ["Solução completa", "Suporte 24/7", "Customizações ilimitadas"]
+      features: commonFeatures
     }
   ]
 
