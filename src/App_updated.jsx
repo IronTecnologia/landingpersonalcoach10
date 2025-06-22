@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import { Button } from '@/components/ui/button.jsx'
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card.jsx'
 import { Badge } from '@/components/ui/badge.jsx'
@@ -8,6 +8,7 @@ import './App.css'
 
 function App() {
   const [hoveredPlan, setHoveredPlan] = useState(null)
+  const pricingSectionRef = useRef(null)
 
   const features = [
     {
@@ -88,6 +89,12 @@ function App() {
     }
   ]
 
+  const scrollToPricing = () => {
+    if (pricingSectionRef.current) {
+      pricingSectionRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-800 via-slate-700 to-slate-900">
       {/* Hero Section */}
@@ -110,16 +117,10 @@ function App() {
               <Button 
                 size="lg" 
                 className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
+                onClick={scrollToPricing}
               >
                 Começar Agora
                 <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
-              <Button 
-                variant="outline" 
-                size="lg"
-                className="border-2 border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white px-8 py-4 text-lg font-semibold rounded-xl transition-all duration-300"
-              >
-                Ver Demonstração
               </Button>
             </div>
           </div>
@@ -158,7 +159,7 @@ function App() {
       </section>
 
       {/* Pricing Section */}
-      <section className="py-20">
+      <section ref={pricingSectionRef} className="py-20">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-white mb-4">
@@ -262,4 +263,5 @@ function App() {
 }
 
 export default App
+
 
